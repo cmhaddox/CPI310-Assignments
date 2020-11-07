@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <script ref="script.js"></script>
+    </head>
+    
+    <script>
+        //    global array of active tags
+        var Tags = [];
+
+        //    global function for toggling buttons
+        function toggleButton(buttonElement){
+            //    update style
+            if(buttonElement.classList.contains('activeTag')){
+            //    button was active, is now inactive
+                buttonElement.classList.remove('activeTag');
+            //    update code - remove the tag from global array if it does exist
+                var this_tag = buttonElement.getAttribute('tag');
+        if(Tags.indexOf(String(this_tag)) != -1){
+            Tags.splice(Tags.indexOf(this_tag), 1);
+        }
+        } else {
+            //    button was inactive, is now active
+            buttonElement.classList.add('activeTag')
+            //    update code - add the tag to global array if it does not exist
+            var this_tag = buttonElement.getAttribute('tag');
+        if(Tags.indexOf(String(this_tag)) == -1){
+            Tags.push(this_tag);
+                }
+            }   
+        }
+    </script>
+    
+    <body>
+        <div class="tags">
+            <button tag="experienced" onclick="toggleButton(this)">Experienced</button>
+            <button tag="newbie" onclick="toggleButton(this)">Newbie</button>
+            <button tag="fps" onclick="toggleButton(this)">FPS Player</button>
+            <button tag="moba" onclick="toggleButton(this)">MOBA Player</button>
+        </div>
+    </body>
+</html>

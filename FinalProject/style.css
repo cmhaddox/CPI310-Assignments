@@ -1,0 +1,26 @@
+button {
+    background-color:white;
+    display:inline-block;
+    cursor:pointer;
+    color:black;
+    font-family:Arial;
+    font-size:15px;
+    padding:4px 8px;
+    border-radius:17px;
+    text-decoration:none;
+    border-color:dimgrey;
+    border-width: 1px;
+    opacity:75%;
+}
+
+button:hover {
+    opacity:100%;
+}
+
+button:focus {
+    outline:none;
+}
+
+.activeTag {
+  border-color:red !important;
+}
